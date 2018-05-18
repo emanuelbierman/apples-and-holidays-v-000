@@ -94,8 +94,7 @@ end
 def refactored_holidays_with_bbq(holiday_hash)
   holiday_hash.each_value do |value|
     value.each_pair do |key, value|
-      value.collect do |item|
-        item == "BBQ"
+      if value.collect {|item|item == "BBQ"} != nil
       end
     end
   end
