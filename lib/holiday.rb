@@ -96,13 +96,10 @@ def all_holidays_with_bbq(holiday_hash)
     end
   end
   bbq_arr
-end
-
-def refactored_holidays_with_bbq(holiday_hash)
-  holiday_hash.each_value do |value|
-    value.each_pair do |key, value|
-      value.collect {|item|item == "BBQ"}
-      binding.pry
-    end
-  end
+  # here is their (much more elegant) solution:
+  # holiday_hash.map do |season, holidays|
+  #   holidays.map do |holiday, supplies|
+  #     holiday if supplies.include?("BBQ")
+  #   end
+  # end.flatten.compact
 end
